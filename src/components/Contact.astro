@@ -1,0 +1,268 @@
+<section class="contact padding-block" id="contact">
+  <div class="contact__leaves">
+    <div class="contact__leaves-set">
+      <div class="contact__leaves-item">
+        <img src="/leaf_01.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_02.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_03.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_04.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_01.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_02.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_03.png" />
+      </div>
+      <div class="contact__leaves-item">
+        <img src="/leaf_04.png" />
+      </div>
+    </div>
+  </div>
+  <img src="/bg.jpg" class="bg__contact" />
+  <img src="/girl.png" class="girl__contact" />
+  <img src="/trees.png" class="trees__contact" />
+  <div class="contact__container flow">
+    <h3 class="heading-2 text-orange">Contacto</h3>
+    <form class="contact__form" action="https://formsubmit.io/send/ejdaza42@gmail.com" method="POST" target="_blank">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Nombre"
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Email"
+      />
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        required
+        placeholder="Asunto"
+      />
+      <textarea
+        id="message"
+        name="message"
+        required
+        placeholder="Mensaje"
+        rows="4"
+      ></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<style>
+.contact {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.contact__container {
+  --flow-space: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 2.5rem 3.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact__form > * {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  resize: none;
+  background: var(--clr-white);
+  color: inherit;
+}
+
+.contact__form > button {
+  cursor: pointer;
+  color: var(--clr-white);
+  background-color: var(--clr-orange);
+}
+
+.contact__form > button:hover {
+  opacity: 0.8;
+}
+
+.bg__contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.girl__contact {
+  position: absolute;
+  bottom: calc(55% - 200px);
+  left: 0;
+  width: 200px;
+  height: auto;
+  animation: animateGirl 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes animateGirl {
+  0% {
+    transform: translateX(calc(100% + 100vw));
+  }
+
+  50% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+
+  50.01% {
+    transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateX(calc(100% + 200vw))rotateY(180deg);
+  }
+ 
+}
+
+.trees__contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.contact__leaves {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact__leaves-set {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.contact__leaves-item {
+  position: absolute;
+  display: block;
+}
+
+.contact__leaves-item:nth-child(1) {
+  left: 15%;
+  animation: leave 12s linear infinite;
+}
+
+.contact__leaves-item:nth-child(2) {
+  left: 30%;
+  animation: leave 16s linear infinite;
+}
+
+.contact__leaves-item:nth-child(3) {
+  left: 45%;
+  animation: leave 10s linear infinite;
+}
+
+.contact__leaves-item:nth-child(4) {
+  left: 60%;
+  animation: leave 15s linear infinite;
+}
+
+.contact__leaves-item:nth-child(5) {
+  left: 75%;
+  animation: leave 18s linear infinite;
+}
+
+.contact__leaves-item:nth-child(6) {
+  left: 90%;
+  animation: leave 16s linear infinite;
+}
+
+.contact__leaves-item:nth-child(7) {
+  left: 5%;
+  animation: leave 18s linear infinite;
+}
+
+.contact__leaves-item:nth-child(8) {
+  left: 25%;
+  animation: leave 15s linear infinite;
+}
+
+@keyframes leave {
+  0% {
+    opacity: 0;
+    top: -10%;
+    transform: translateX(20px) rotate(0deg);
+  }
+
+  10%{
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(-20px) rotate(45deg);
+  }
+
+  40% {
+    transform: translateX(20px) rotate(90deg);
+  }
+
+  60% {
+    transform: translateX(-20px) rotate(135deg);
+  }
+
+  80% {
+    transform: translateX(20px) rotate(180deg);
+  }
+
+  100% {
+    top: 110%;
+    transform: translateX(-20px) rotate(225deg);
+  }
+}
+</style>

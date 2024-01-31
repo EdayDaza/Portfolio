@@ -1,0 +1,55 @@
+---
+---
+
+<section id="about" class="padding-block">
+  <div class="container">
+    <div class="even-columns items-center">
+      <img class="about__image" src="/about.png" alt="about_img">
+
+      <div class="about__content flow">
+        <h2 class="heading-2">Sobre Mi</h2>
+        <p>Soy un desarrollador web especializado en tecnologías front-end como HTML, CSS, JavaScript y React. Mi enfoque se centra en la creación de interfaces intuitivas y atractivas, impulsadas por una sólida comprensión de las necesidades del usuario.</p>
+        <span id="more" class="flow">
+          <p>Apasionado por la evolución constante del desarrollo web, busco constantemente aprender nuevas tecnologías y aplicarlas en proyectos desafiantes.</p> 
+          <p>Estoy entusiasmado por enfrentar nuevos desafíos y oportunidades en el fascinante mundo del desarrollo web.</p>
+        </span>
+        <button class="btn" id="btn-read">Leer más</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__image {
+    max-height: 800px;
+  }
+
+  #more {
+    display: none;
+  }
+  
+  @media screen and (max-width: 50em) {
+    .even-columns > img {
+      display: none;
+    }
+
+    .about__content {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const btnRead = document.getElementById("btn-read")
+  const moreText = document.getElementById("more")
+
+  btnRead.addEventListener("click", () => {  
+    if (moreText.style.display === "block") {
+      moreText.style.display = "none"
+      btnRead.innerHTML = "Leer más"
+    } else {
+      moreText.style.display = "block"
+      btnRead.innerHTML = "Leer menos"
+    }
+  })
+</script>

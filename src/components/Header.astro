@@ -1,0 +1,106 @@
+---
+import logoImage from "/public/image.png";
+import MenuIcon from "../icons/MenuIcon.astro";
+import CloseIcon from "../icons/CloseIcon.astro";
+---
+
+<header>
+  <div class="container">
+    <div class="navbar-container">
+      <img src={logoImage.src} alt="Logo" width="130px" />
+      <nav class="navbar">
+        <ul class="navbar__menu">
+          <li><a class="navbar__link" href="#home">Inicio</a></li>
+          <li><a class="navbar__link" href="#about">Acerca de</a></li>
+          <li><a class="navbar__link" href="#projects">Proyectos</a></li>
+          <li><a class="navbar__link" href="#contact">Contacto</a></li>
+          <li><a class="btn" href="/_Eday CV.pdf" target="_blank">Descargar CV</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle">
+        <MenuIcon id="icon-menu" style="width: 25px;" />
+        <CloseIcon id="icon-close" style="width: 25px;" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--clr-white);
+    z-index: 999;
+  }
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.25rem;
+  }
+  .navbar__menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navbar__menu li > .navbar__link{
+    color: var(--clr-black);
+    font-weight: var(--fw-medium);
+  }
+  .navbar__menu li > .navbar__link:hover,
+  .navbar__menu li > .navbar__link:focus{
+    color: var(--clr-orange);
+  }
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  @media screen and (max-width: 50em) {
+    .navbar {
+      display: none;
+      position: fixed;
+      inset: 7rem 1rem auto;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: var(--clr-white);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2)
+    }
+    .navbar.isOpen {
+      display: block;
+    }
+    .navbar__menu {
+      flex-direction: column;
+    }
+    .mobile-nav-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding-inline: 0.5em;
+      aspect-ratio: 1;
+    }
+    .mobile-nav-toggle *:last-child {
+      display: none;
+    }
+    .mobile-nav-toggle.isOpen *:last-child {
+      display: block;
+    }
+    .mobile-nav-toggle.isOpen *:first-child {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const btnToggle = document.querySelector(".mobile-nav-toggle")
+  const navbar = document.querySelector(".navbar")
+
+  btnToggle.addEventListener("click", () => {
+    btnToggle.classList.toggle("isOpen")
+    navbar.classList.toggle("isOpen")
+  })
+</script>

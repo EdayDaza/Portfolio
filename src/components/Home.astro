@@ -1,0 +1,95 @@
+---
+import GitHub from "../icons/GitHubIcon.astro";
+import Linkedin from "../icons/LinkedinIcon.astro";
+import Mail from "../icons/MailIcon.astro";
+---
+
+<section id="home">
+  <div class="container">
+    <div class="even-columns items-center">
+      <div class="home__content flow" style="--flow-space: 1.5rem;">
+        <h1 class="heading-1"><span class="text-orange">Hey</span> , soy Eday Daza</h1>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolore velit quod accusantium, nostrum, vel cupiditate aliquam nulla, provident reprehenderit.
+        </p>
+
+        <div class="social-icons">
+          <a href="https://github.com/EdayDaza" target="_blank">
+            <GitHub fill="var(--clr-white)" />
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/eday-daza" target="_blank">
+            <Linkedin fill="var(--clr-white)" />
+            <span>LinkedIn</span>
+          </a>
+          <a href="#" target="_blank">
+            <Mail fill="var(--clr-white)" />
+            <span>ejdaza42@gmail.com</span>
+          </a>
+        </div>
+
+        <a class="btn" href="#projects">Explora mis proyectos</a>
+      </div>
+
+      <img class="home__image mx-auto" src="/main.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<style>
+  #home{
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-image: url("/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .social-icons a {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(128, 103, 240);
+    border-radius: 2rem;
+    color: var(--clr-white);
+    transition: scale 300ms;
+  }
+  .social-icons a:hover {
+    background-color: var(--clr-orange);
+    scale: 1.1;
+  }
+  .home__image {
+    max-height: 400px;
+  }
+
+  @media screen and (max-width: 50em) {
+    #home {
+      margin-top: 81px;
+    }
+    .home__content {
+      order: 2;
+      text-align: center;
+    }
+    .social-icons {
+      justify-content: center;
+    }
+    .social-icons a {
+      padding: 0.5rem;
+      aspect-ratio: 1;
+    }
+    .social-icons a > span {
+      display: none;
+    }
+    .home__image {
+      order: 1;
+    }
+  }
+    
+</style>
